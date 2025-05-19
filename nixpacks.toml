@@ -1,0 +1,14 @@
+[providers]
+node = { version = "18" } # Specify Node.js version if needed
+
+[phases.setup]
+nixPkgs = ["nodejs"] 
+
+[phases.install]
+commands = ["pnpm install"]
+
+[phases.build]
+commands = ["pnpm build"]
+
+[start]
+command = "pnpm start"
