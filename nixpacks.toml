@@ -1,8 +1,11 @@
-[providers]
-node = { version = "18" } # Specify Node.js version if needed
+# List of providers as an array of strings
+providers = ["node"]
 
 [phases.setup]
-nixPkgs = ["nodejs"] 
+commands = [
+  "corepack enable",
+  "corepack prepare pnpm@9.1.0 --activate"
+]
 
 [phases.install]
 commands = ["pnpm install"]
